@@ -15,7 +15,6 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                 sh '''
-                kubectl version --client
                 kubectl get nodes
                 kubectl apply -f k8s/deployment.yaml
                 '''
